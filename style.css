@@ -1,52 +1,58 @@
 body {
-    background-color: pink;
-    background-image: url('Love-Transparent-File.png'); /* Pastikan ini nama file yang benar */
-    background-repeat: repeat; /* Gambar love akan berulang */
-    background-size: 100px 100px; /* Mengubah ukuran gambar love */
+    background-color: #FFC0CB; /* Warna pink yang lebih lembut */
+    background-image: url('Love-Transparent-File.png');
+    background-repeat: repeat;
+    background-size: 50px 50px; /* Ukuran gambar love yang lebih kecil untuk diulang */
     font-family: 'Latin', cursive;
     text-align: center;
     color: #ff0000;
 }
 
-/* Menghilangkan pseudo-element yang menimbulkan efek transparansi di seluruh elemen body */
-/* body::before { ... } */
-
 .slide {
-    position: relative;
-    z-index: 1;
-    margin-top: 10%;
-    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Menyelaraskan konten secara vertikal */
+    height: 100vh; /* Menggunakan tinggi viewport */
+    padding: 20px;
+    box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran */
 }
 
 h1 {
-    font-size: 5em;
-    font-weight: bold; /* Membuat teks lebih tebal */
+    font-size: 4em; /* Ukuran font lebih besar */
+    font-weight: bold;
     color: #ff0000;
-    text-shadow: 2px 2px 8px #ffffff; /* Bayangan teks untuk menonjolkan */
-    margin: 0 auto;
-    width: 75%;
-    line-height: 1.2;
+    text-shadow: 2px 2px 8px #FFFFFF; /* Bayangan putih untuk meningkatkan kontras */
 }
 
 .heart-btn {
     background-color: #ff0000;
     border: none;
     border-radius: 50%;
-    padding: 20px 40px;
-    font-size: 1.5em;
+    padding: 15px 30px;
+    font-size: 1.2em; /* Ukuran font tombol */
     cursor: pointer;
-    margin-top: 50px; /* Jarak dari teks */
+    margin-top: 2em; /* Jarak dari teks ke tombol */
     animation: heartbeat 1s infinite;
     color: white;
     text-shadow: 2px 2px 4px #000000;
-}
-
-.heart-btn:disabled {
-    cursor: not-allowed;
+    align-self: center; /* Menyelaraskan tombol secara horizontal */
 }
 
 @keyframes heartbeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
+}
+
+/* Mengurangi kepadatan background dengan pseudo-element */
+body::before {
+    content: "";
+    position: fixed; /* Fixed agar selalu tertutupi saat scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    opacity: 0.3; /* Lebih transparan */
+    z-index: -1;
 }
