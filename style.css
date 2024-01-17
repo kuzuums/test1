@@ -1,9 +1,30 @@
 body {
     background-color: pink;
-    background-image: url('heart_background.png');
+    background-image: url('Love-Transparent-File.png'); /* Gambar latar belakang yang berulang */
+    background-repeat: repeat; /* Gambar akan berulang */
+    background-size: contain; /* Mengatur agar gambar sesuai dengan area yang tersedia */
     font-family: 'Latin', cursive;
     text-align: center;
-    color: romantic red;
+    color: #ff0000; /* Anggap sebagai 'romantic red', ganti dengan kode warna yang tepat */
+}
+
+/* Menggunakan pseudo-element untuk transparansi agar tidak mempengaruhi elemen lain */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    opacity: 0.5; /* Atur level transparansi di sini */
+    z-index: -1;
+}
+
+/* Elemen lain harus memiliki position relative dan z-index yang lebih tinggi dari pseudo-element */
+.slide, .heart-btn, h1 {
+    position: relative;
+    z-index: 1;
 }
 
 .slide {
@@ -11,11 +32,11 @@ body {
 }
 
 h1 {
-    color: romantic red;
+    color: #ff0000; /* Anggap sebagai 'romantic red', ganti dengan kode warna yang tepat */
 }
 
 .heart-btn {
-    background-color: attractive color;
+    background-color: #ff9999; /* Anggap sebagai 'attractive color', ganti dengan kode warna yang tepat */
     border: none;
     border-radius: 50%;
     padding: 10px 20px;
