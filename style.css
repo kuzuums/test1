@@ -1,27 +1,44 @@
 body {
     background-color: #FFC0CB; /* Warna pink yang lebih lembut */
-    background-image: url('Love-Transparent-File.png');
     background-repeat: repeat;
-    background-size: 50px 50px; /* Ukuran gambar love yang lebih kecil untuk diulang */
     font-family: 'Latin', cursive;
     text-align: center;
     color: #ff0000;
 }
 
-.slide {
+/* Mengurangi kepadatan dan ukuran background dengan pseudo-element */
+body::before {
+    content: "";
+    position: fixed; /* Fixed agar selalu tertutupi saat scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('Love-Transparent-File.png') repeat;
+    background-size: 30px 30px; /* Ukuran gambar love yang lebih kecil */
+    opacity: 0.1; /* Lebih transparan */
+    z-index: -1;
+}
+
+.slide, .slide h1, .heart-btn, .additional-text {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Menyelaraskan konten secara vertikal */
+    align-items: center; /* Menyelaraskan konten secara horizontal */
     height: 100vh; /* Menggunakan tinggi viewport */
-    padding: 20px;
-    box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran */
 }
 
-h1 {
+h1, .additional-text {
     font-size: 4em; /* Ukuran font lebih besar */
     font-weight: bold;
     color: #ff0000;
     text-shadow: 2px 2px 8px #FFFFFF; /* Bayangan putih untuk meningkatkan kontras */
+    margin: 0;
+}
+
+.additional-text {
+    font-size: 2em; /* Ukuran font lebih kecil dari h1 */
+    padding-top: 20px; /* Jarak dari tulisan di atasnya */
 }
 
 .heart-btn {
@@ -35,24 +52,10 @@ h1 {
     animation: heartbeat 1s infinite;
     color: white;
     text-shadow: 2px 2px 4px #000000;
-    align-self: center; /* Menyelaraskan tombol secara horizontal */
 }
 
 @keyframes heartbeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
-}
-
-/* Mengurangi kepadatan background dengan pseudo-element */
-body::before {
-    content: "";
-    position: fixed; /* Fixed agar selalu tertutupi saat scroll */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    opacity: 0.3; /* Lebih transparan */
-    z-index: -1;
 }
