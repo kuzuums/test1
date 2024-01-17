@@ -38,7 +38,7 @@ h1 {
 .heart-btn {
     background-color: #ff9999; /* Anggap sebagai 'attractive color', ganti dengan kode warna yang tepat */
     border: none;
-    border-radius: 50%;
+    border-radius: 90%;
     padding: 10px 20px;
     font-size: 50px;
     cursor: pointer;
