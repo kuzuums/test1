@@ -1,24 +1,15 @@
 body {
     background-color: pink;
-    background-image: url('Love-Transparent-File.png');
-    background-repeat: repeat;
-    background-size: cover;
+    background-image: url('Love-Transparent-File.png'); /* Pastikan ini nama file yang benar */
+    background-repeat: repeat; /* Gambar love akan berulang */
+    background-size: 100px 100px; /* Mengubah ukuran gambar love */
     font-family: 'Latin', cursive;
     text-align: center;
-    color: #ff0000; /* Ganti dengan kode warna merah yang tepat */
+    color: #ff0000;
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    opacity: 0.5;
-    z-index: -1;
-}
+/* Menghilangkan pseudo-element yang menimbulkan efek transparansi di seluruh elemen body */
+/* body::before { ... } */
 
 .slide {
     position: relative;
@@ -29,10 +20,12 @@ body::before {
 
 h1 {
     font-size: 5em;
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #ff0000;
+    text-shadow: 2px 2px 8px #ffffff; /* Bayangan teks untuk menonjolkan */
     margin: 0 auto;
     width: 75%;
     line-height: 1.2;
-    color: #ff0000;
 }
 
 .heart-btn {
@@ -42,7 +35,7 @@ h1 {
     padding: 20px 40px;
     font-size: 1.5em;
     cursor: pointer;
-    margin-top: 50px; /* Atur jarak dari teks */
+    margin-top: 50px; /* Jarak dari teks */
     animation: heartbeat 1s infinite;
     color: white;
     text-shadow: 2px 2px 4px #000000;
